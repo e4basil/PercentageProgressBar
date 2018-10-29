@@ -1,0 +1,54 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    ext.kotlin_version = '1.2.71'
+    repositories {
+        google()
+        jcenter()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.2.1'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+
+        // Required plugins added to classpath to facilitate pushing to Jcenter/Bintray
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.0'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
+    }
+}
+
+
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+
+
+}
+tasks.withType(Javadoc) {
+    enabled = false
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+ext {
+    // validator Library Info
+    libVersionCode = 1
+    libVersionName = '0.1.1'
+    libPomUrl = 'https://github.com/e4basil/PercentageProgressBar'
+    libGithubRepo = 'e4basil/PercentageProgressBar'
+    libModuleName = 'PercentageProgressBar'
+    libModuleDesc = 'Android library for fast and simple PercentageProgressBar'
+    libBintrayName = 'PercentageProgressBar'
+
+
+//    gradlew clean build install bintrayUpload -Ppublish=true -PjavadocFlag=true
+
+}
