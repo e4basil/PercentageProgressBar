@@ -1,22 +1,16 @@
 package com.android.basi.percentageprogressbar;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
-import android.animation.ValueAnimator;
+
 import android.content.Context;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.*;
+import android.support.annotation.ColorInt;
+import android.support.annotation.Nullable;
 import android.text.TextUtils;
 import android.util.TypedValue;
-import android.view.animation.DecelerateInterpolator;
-import android.view.animation.LinearInterpolator;
-import androidx.annotation.ColorInt;
-import androidx.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
-import androidx.core.content.ContextCompat;
 
 public class PercentageProgressBar extends View {
 

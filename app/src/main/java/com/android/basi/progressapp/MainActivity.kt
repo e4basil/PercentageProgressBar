@@ -1,8 +1,8 @@
 package com.android.basi.progressapp
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.logging.Logger
 
