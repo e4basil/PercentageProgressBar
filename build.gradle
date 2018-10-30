@@ -41,7 +41,7 @@ task clean(type: Delete) {
 ext {
     // validator Library Info
     libVersionCode = 4
-    libVersionName = '0.1.'
+    libVersionName = '0.1.4'
     libPomUrl = 'https://github.com/e4basil/PercentageProgressBar'
     libGithubRepo = 'e4basil/PercentageProgressBar'
     libModuleName = 'percentageprogressbar'
