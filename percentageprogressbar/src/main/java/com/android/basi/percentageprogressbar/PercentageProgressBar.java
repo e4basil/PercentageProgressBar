@@ -54,6 +54,9 @@ public class PercentageProgressBar extends View {
     private int max;
     private float mStartAngle = -90;
 
+    private String preText="";
+    private String postText="";
+
     public PercentageProgressBar(Context context) {
         super(context);
         init(null, 0);
@@ -91,11 +94,14 @@ public class PercentageProgressBar extends View {
                 mProgressBarThickness = a.getDimensionPixelSize(R.styleable.PercentageProgressBar_ppb_thickness,
                         30);
 
-                mCirclePaintColor = a.getColor(R.styleable.PercentageProgressBar_ppb_inner_color,
+                mCirclePaintColor = a.getColor(R.styleable.PercentageProgressBar_ppb_progress_color,
                         Color.parseColor("#008577"));
 
                 setMax(a.getInt(R.styleable.PercentageProgressBar_ppb_progress_max, 100));
                 setProgress(a.getInt(R.styleable.PercentageProgressBar_ppb_progress, 0));
+
+                setPreText(a.getString(R.styleable.PercentageProgressBar_ppb_progress_pre_text));
+                setPostText(a.getString(R.styleable.PercentageProgressBar_ppb_progress_post_text));
             } finally {
 
                 a.recycle();
@@ -174,7 +180,7 @@ public class PercentageProgressBar extends View {
     }
 
     public String getDrawText() {
-        return String.valueOf(getProgress());
+        return getPreText() + " " + getProgress() + " " + getPostText();
     }
 
     public int getProgress() {
@@ -200,5 +206,26 @@ public class PercentageProgressBar extends View {
         }
     }
 
+    public String getPreText() {
+        return preText;
+    }
 
+    public void setPreText(String preText) {
+        if (preText != null) {
+            this.preText = preText;
+            invalidate();
+        }
+
+    }
+
+    public String getPostText() {
+        return postText;
+    }
+
+    public void setPostText(String postText) {
+        if (postText != null) {
+            this.postText = postText;
+            invalidate();
+        }
+    }
 }
