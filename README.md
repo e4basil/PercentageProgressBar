@@ -5,7 +5,7 @@ percentage progressbar lib
 
 ## 💻 Installation
 
-    implementation 'com.android.basi:percentageprogressbar:0.1.6'
+    implementation 'com.android.basi:percentageprogressbar:0.1.7'
 
 
 ## Supported attributes/features
@@ -14,6 +14,7 @@ Here is a quick overview of the attributes/features .
 |   Attribute / Feature    |   Attribute Name | status   |
 | -------       |:-----------:|:-----------:|
 |progress color  |   ppb_progress_color   |![Check](/assets/pngs/check_green_small.png)|
+|secondary progress color  |   ppb_secondary_progress_color   |![Check](/assets/pngs/check_green_small.png)|
 |progress bar thickness       |   ppb_thickness   |![Check](/assets/pngs/check_green_small.png)|
 |progress bar progress |    ppb_progress  |![Check](/assets/pngs/check_green_small.png)|
 |progress bar max progress    |   ppb_progress_max  |![Check](/assets/pngs/check_green_small.png)|
