@@ -5,7 +5,7 @@ percentage progressbar lib
 
 ## 💻 Installation
 
-    implementation 'com.android.basi:percentageprogressbar:[](https://bintray.com/basil/maven/PercentageProgressBar/_latestVersion)'
+    implementation 'com.android.basi:percentageprogressbar:[ ![](https://api.bintray.com/packages/basil/maven/PercentageProgressBar/images/download.svg) ](https://bintray.com/basil/maven/PercentageProgressBar/_latestVersion)'
 
 
 ## Supported attributes/features
