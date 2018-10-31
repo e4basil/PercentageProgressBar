@@ -39,12 +39,12 @@ public class PercentageProgressBar extends View {
     /**
      * Circle Color
      */
-    @ColorInt
+
     private int mCirclePaintColor;
     /**
      * Text Color
      */
-    @ColorInt
+
     private int mTextPaintColor;
 
     /**
@@ -100,10 +100,10 @@ public class PercentageProgressBar extends View {
                         30);
 
                 mCirclePaintColor = a.getColor(R.styleable.PercentageProgressBar_ppb_progress_color,
-                        Color.parseColor("#000"));
+                        Color.BLACK);
 
-                mTextPaintColor = a.getColor(R.styleable.PercentageProgressBar_ppb_progress_color,
-                        Color.parseColor("#000"));
+                mTextPaintColor = a.getColor(R.styleable.PercentageProgressBar_ppb_text_color,
+                        Color.BLACK);
 
                 setMax(a.getInt(R.styleable.PercentageProgressBar_ppb_progress_max, 100));
                 setProgress(a.getInt(R.styleable.PercentageProgressBar_ppb_progress, 0));

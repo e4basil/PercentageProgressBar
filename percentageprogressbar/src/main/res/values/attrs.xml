@@ -9,6 +9,7 @@
 
         <attr name="ppb_text_size" format="dimension"/>
         <attr name="ppb_text_color" format="color"/>
+
         <attr name="ppb_progress_pre_text" format="string"/>
         <attr name="ppb_progress_post_text" format="string"/>
     </declare-styleable>

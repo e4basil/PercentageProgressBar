@@ -16,6 +16,7 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:ppb_progress="10"
-            app:ppb_progress_post_text="%"/>
+            app:ppb_progress_post_text="%"
+            app:ppb_text_color="@color/colorPrimary"/>
 
 </android.support.constraint.ConstraintLayout>
