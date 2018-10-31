@@ -41,6 +41,11 @@ public class PercentageProgressBar extends View {
      */
     @ColorInt
     private int mCirclePaintColor;
+    /**
+     * Text Color
+     */
+    @ColorInt
+    private int mTextPaintColor;
 
     /**
      * Actual size of the complete circle.
@@ -54,8 +59,8 @@ public class PercentageProgressBar extends View {
     private int max;
     private float mStartAngle = -90;
 
-    private String preText="";
-    private String postText="";
+    private String preText = "";
+    private String postText = "";
 
     public PercentageProgressBar(Context context) {
         super(context);
@@ -95,13 +100,18 @@ public class PercentageProgressBar extends View {
                         30);
 
                 mCirclePaintColor = a.getColor(R.styleable.PercentageProgressBar_ppb_progress_color,
-                        Color.parseColor("#008577"));
+                        Color.parseColor("#000"));
+
+                mTextPaintColor = a.getColor(R.styleable.PercentageProgressBar_ppb_progress_color,
+                        Color.parseColor("#000"));
 
                 setMax(a.getInt(R.styleable.PercentageProgressBar_ppb_progress_max, 100));
                 setProgress(a.getInt(R.styleable.PercentageProgressBar_ppb_progress, 0));
 
                 setPreText(a.getString(R.styleable.PercentageProgressBar_ppb_progress_pre_text));
                 setPostText(a.getString(R.styleable.PercentageProgressBar_ppb_progress_post_text));
+
+//                setmTextPaintColor(mCirclePaintColor);
             } finally {
 
                 a.recycle();
@@ -117,7 +127,7 @@ public class PercentageProgressBar extends View {
      */
     private void setPaint() {
 
-        mProgressPaint.setColor(mCirclePaintColor);
+        mProgressPaint.setColor(mTextPaintColor);
         mProgressPaint.setStyle(Paint.Style.STROKE);
         mProgressPaint.setTextSize(mTextThickness);
         mProgressPaint.setStrokeCap(Paint.Cap.BUTT);
@@ -227,5 +237,15 @@ public class PercentageProgressBar extends View {
             this.postText = postText;
             invalidate();
         }
+    }
+
+
+    public int getmTextPaintColor() {
+        return mTextPaintColor;
+    }
+
+    public void setmTextPaintColor(int mTextPaintColor) {
+        this.mTextPaintColor = mTextPaintColor;
+        invalidate();
     }
 }
