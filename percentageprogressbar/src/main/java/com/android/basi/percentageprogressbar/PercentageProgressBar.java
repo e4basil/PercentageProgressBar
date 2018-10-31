@@ -22,6 +22,10 @@ public class PercentageProgressBar extends View {
      * Draw  progress
      */
     private Paint mCirclePaint;
+    /**
+     * Draw  secondary progress
+     */
+    private Paint mSecondaryCirclePaint;
 
     /**
      * Thickness of the progress
@@ -41,6 +45,11 @@ public class PercentageProgressBar extends View {
      */
 
     private int mCirclePaintColor;
+    /**
+     * Secondary Circle Color
+     */
+
+    private int mSecondaryCirclePaintColor;
     /**
      * Text Color
      */
@@ -80,6 +89,7 @@ public class PercentageProgressBar extends View {
     private void init(AttributeSet attrs, int defStyle) {
         mProgressPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mCirclePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+        mSecondaryCirclePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mCircleRect = new RectF();
 
         Resources resources = getResources();
@@ -101,6 +111,9 @@ public class PercentageProgressBar extends View {
 
                 mCirclePaintColor = a.getColor(R.styleable.PercentageProgressBar_ppb_progress_color,
                         Color.BLACK);
+
+                mSecondaryCirclePaintColor = a.getColor(R.styleable.PercentageProgressBar_ppb_secondary_progress_color,
+                        Color.LTGRAY);
 
                 mTextPaintColor = a.getColor(R.styleable.PercentageProgressBar_ppb_text_color,
                         Color.BLACK);
@@ -137,6 +150,12 @@ public class PercentageProgressBar extends View {
         mCirclePaint.setStrokeWidth(mProgressBarThickness);
         mCirclePaint.setStrokeCap(Paint.Cap.BUTT);
 
+
+        mSecondaryCirclePaint.setColor(mSecondaryCirclePaintColor);
+        mSecondaryCirclePaint.setStyle(Paint.Style.STROKE);
+        mSecondaryCirclePaint.setStrokeWidth(mProgressBarThickness);
+        mSecondaryCirclePaint.setStrokeCap(Paint.Cap.BUTT);
+
     }
 
 
@@ -145,6 +164,9 @@ public class PercentageProgressBar extends View {
         super.onDraw(canvas);
 
         float angle = (360) * getProgress() / getMax();
+        canvas.drawArc(mCircleRect, mStartAngle,
+                360, false, mSecondaryCirclePaint);
+
         canvas.drawArc(mCircleRect, mStartAngle,
                 angle, false, mCirclePaint);
 
@@ -156,6 +178,8 @@ public class PercentageProgressBar extends View {
                     (getWidth() - textHeight) / 2.0f, mProgressPaint);
         }
 
+//        canvas.drawCircle((mCircleRect.right - mCircleRect.left) / 2, (mCircleRect.bottom - mCircleRect.top) / 2,
+//                (mCircleRect.right - mCircleRect.left) / 2, mSecondaryCirclePaint);
     }
 
     @Override
@@ -179,6 +203,7 @@ public class PercentageProgressBar extends View {
         mCircleRect.set(paddingLeft + mProgressBarThickness, paddingTop + mProgressBarThickness,
                 mSize - paddingLeft - mProgressBarThickness,
                 mSize - paddingTop - mProgressBarThickness);
+
 
     }
 

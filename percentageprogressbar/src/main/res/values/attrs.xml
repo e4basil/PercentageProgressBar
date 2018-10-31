@@ -2,6 +2,7 @@
 <resources>
     <declare-styleable name="PercentageProgressBar">
         <attr name="ppb_progress_color" format="color"/>
+        <attr name="ppb_secondary_progress_color" format="color"/>
         <attr name="ppb_thickness" format="dimension"/>
 
         <attr name="ppb_progress" format="integer"/>
