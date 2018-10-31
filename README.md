@@ -5,7 +5,7 @@ percentage progressbar lib
 
 ## 💻 Installation
 
-    implementation 'com.android.basi:percentageprogressbar:0.1.5'
+    implementation 'com.android.basi:percentageprogressbar:0.1.6'
 
 
 ## Supported attributes/features
