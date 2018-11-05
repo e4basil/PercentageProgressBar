@@ -17,6 +17,7 @@ jobs:
       JVM_OPTS: -Xmx3200m
       TERM: dumb
       MAX_RETRY: 4
+      ANDROID_HOME: /usr/local/android-sdk-linux
 
     steps:
       - checkout
