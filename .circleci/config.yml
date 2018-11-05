@@ -10,7 +10,7 @@ jobs:
       - image: circleci/openjdk:8-jdk
       - image: circleci/android:api-28-alpha
 
-    working_directory: ~/repo
+    working_directory: ~/code
 
     environment:
       # Customize the JVM maximum heap limit
@@ -23,10 +23,7 @@ jobs:
 
       # Download and cache dependencies
       - restore_cache:
-          keys:
-          - v1-dependencies-{{ checksum "build.gradle" }}
-          # fallback to using the latest cache if no exact match is found
-          - v1-dependencies-
+          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
 
       - run:
           name: Download Dependencies
@@ -34,13 +31,15 @@ jobs:
 
       - save_cache:
           paths:
-            - ~/.gradle
-          key: v1-dependencies-{{ checksum "build.gradle" }}
-
-      # run tests!
+                  - ~/.gradle
+          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
       - run:
-        name : gradle test
-        command: ./gradlew -p clean test
+          name: Run Tests
+          command: ./gradlew lint test
+      # run tests!
+#      - run:
+#          name : gradle test
+#          command: ./gradlew -p clean test
 
 
 
