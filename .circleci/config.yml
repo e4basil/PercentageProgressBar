@@ -24,6 +24,7 @@ update_sdk: &update_sdk
       echo "d56f5187479451eabf01fb78af6dfcb131a6481e" > "$ANDROID_HOME/licenses/android-sdk-license"
       echo "84831b9409646a918e30573bab4c9c91346d8abd" > "$ANDROID_HOME/licenses/android-sdk-preview-license"
       sdkmanager "platform-tools" "platforms;android-28"
+
 gen_cache_key: &gen_cache_key
   run:
     name: Generate cache key
@@ -41,9 +42,9 @@ save_cache: &save_cache
     key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
 
 permissions: &permissions
-      - run:
-         name: Chmod permissions #if permission for Gradlew Dependencies fail, use this.
-         command: sudo chmod +x ./gradlew
+  - run:
+      name: Chmod permissions #if permission for Gradlew Dependencies fail, use this.
+      command: sudo chmod +x ./gradlew
 
 attach_workspace: &attach_workspace
   attach_workspace:
@@ -80,7 +81,7 @@ jobs:
 #      - <<: *gen_cache_key
       - <<: *restore_cache
 #      - <<: *decrypt_secrets
-      -<<: *permissions
+      - <<: *permissions
       - run:
           name: Download Dependencies
           command: ./gradlew dependencies
