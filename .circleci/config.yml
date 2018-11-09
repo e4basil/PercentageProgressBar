@@ -86,8 +86,11 @@ jobs:
           name: Download Dependencies
           command: ./gradlew dependencies
       - run:
-          name: Assemble and Test APKs
-          command: ./gradlew bundleDebug assembleDebug app:assembleDebugAndroidTest -PProgressApp.versioncode=$CIRCLE_BUILD_NUM
+          name: dummy Test APKs
+          command: ./gradlew clean build -PProgressApp.versioncode=$CIRCLE_BUILD_NUM
+#       - run:
+#          name: Assemble and Test APKs
+#          command: ./gradlew bundleDebug assembleDebug app:assembleDebugAndroidTest -PProgressApp.versioncode=$CIRCLE_BUILD_NUM
 #      - <<: *clean_secrets
       - <<: *save_cache
       - store_artifacts:
