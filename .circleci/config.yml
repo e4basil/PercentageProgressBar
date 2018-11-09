@@ -6,19 +6,17 @@ version: 2
 
 config_android: &config_android
     docker:
-      # specify the version you desire here
       - image: circleci/openjdk:8-jdk
       - image: circleci/android:api-28-alpha
 
     working_directory: ~/ProgressApp
 
     environment:
-      # Customize the JVM maximum heap limit
       JAVA_TOOL_OPTIONS: "-Xmx3200m"
       GRADLE_OPTS: "-Dorg.gradle.daemon=false -Dorg.gradle.workers.max=2 -Dkotlin.incremental=false"
       TERM: dumb
       MAX_RETRY: 4
-      ANDROID_HOME: /usr/local/android-sdk-linux
+#      ANDROID_HOME: /usr/local/android-sdk-linux
 
 update_sdk: &update_sdk
   run:
