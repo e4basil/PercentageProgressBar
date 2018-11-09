@@ -1,6 +1,6 @@
 # Percentage Progressbar
 [ ![Download](https://api.bintray.com/packages/basil/maven/PercentageProgressBar/images/download.svg) ](https://bintray.com/basil/maven/PercentageProgressBar/_latestVersion)
-
+[ ![CircleCI](https://circleci.com/gh/e4basil/PercentageProgressBar.svg?style=svg)](https://circleci.com/gh/e4basil/PercentageProgressBar)
 percentage progressbar lib
 
 ## 💻 Installation
