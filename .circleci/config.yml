@@ -31,14 +31,19 @@ gen_cache_key: &gen_cache_key
 
 restore_cache: &restore_cache
   restore_cache:
-    key: gradle-{{ checksum "/tmp/checksum.txt" }}
+    key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
 
 save_cache: &save_cache
   save_cache:
     paths:
       - ~/.gradle/caches
       - ~/.gradle/wrapper
-    key: gradle-{{ checksum "/tmp/checksum.txt" }}
+    key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
+
+permissions: &permissions
+      - run:
+         name: Chmod permissions #if permission for Gradlew Dependencies fail, use this.
+         command: sudo chmod +x ./gradlew
 
 attach_workspace: &attach_workspace
   attach_workspace:
@@ -75,6 +80,7 @@ jobs:
 #      - <<: *gen_cache_key
       - <<: *restore_cache
 #      - <<: *decrypt_secrets
+      -<<: *permissions
       - run:
           name: Download Dependencies
           command: ./gradlew dependencies
