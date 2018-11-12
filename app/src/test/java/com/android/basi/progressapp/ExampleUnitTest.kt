@@ -5,5 +5,4 @@ package com.android.basi.progressapp
  *
  * See [testing documentation](http://d.android.com/tools/testing).
  */
-class ExampleUnitTest {
-}
+class ExampleUnitTest
