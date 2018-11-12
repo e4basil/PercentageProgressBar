@@ -1,6 +1,6 @@
 # Percentage Progressbar
-[ ![Download](https://api.bintray.com/packages/basil/maven/PercentageProgressBar/images/download.svg) ](https://bintray.com/basil/maven/PercentageProgressBar/_latestVersion)
-[ ![CircleCI](https://circleci.com/gh/e4basil/PercentageProgressBar.svg?style=svg)](https://circleci.com/gh/e4basil/PercentageProgressBar)
+[![Download](https://api.bintray.com/packages/basil/maven/PercentageProgressBar/images/download.svg)](https://bintray.com/basil/maven/PercentageProgressBar/_latestVersion)
+[![CircleCI](https://circleci.com/gh/e4basil/PercentageProgressBar.svg?style=svg)](https://circleci.com/gh/e4basil/PercentageProgressBar)
 percentage progressbar lib
 
 ## 💻 Installation
@@ -11,8 +11,8 @@ percentage progressbar lib
 ## Supported attributes/features
 Here is a quick overview of the attributes/features .
 
-|   Attribute / Feature    |   Attribute Name | status   |
-| -------       |:-----------:|:-----------:|
+|Attribute / Feature|Attribute Name |status|
+|-------       |:-----------:|:-----------:|
 |progress color  |   ppb_progress_color   |✓|
 |secondary progress color  |   ppb_secondary_progress_color   |✓|
 |progress bar thickness       |   ppb_thickness   |✓|

@@ -4,12 +4,14 @@ package com.android.basi.percentageprogressbar;
 import android.content.Context;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
-import android.graphics.*;
-import android.support.annotation.ColorInt;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.RectF;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
-import android.util.TypedValue;
 import android.util.AttributeSet;
+import android.util.TypedValue;
 import android.view.View;
 
 public class PercentageProgressBar extends View {
