@@ -1,7 +1,7 @@
 # Percentage Progressbar
 [![Download](https://api.bintray.com/packages/basil/maven/PercentageProgressBar/images/download.svg)](https://bintray.com/basil/maven/PercentageProgressBar/_latestVersion)
 [![CircleCI](https://circleci.com/gh/e4basil/PercentageProgressBar.svg?style=svg)](https://circleci.com/gh/e4basil/PercentageProgressBar)
-](https://app.codacy.com/app/e4basil/PercentageProgressBar?utm_source=github.com&utm_medium=referral&utm_content=e4basil/PercentageProgressBar&utm_campaign=Badge_Grade_Settings)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/45ca699046fd493db45ea91a9bafc40b)](https://www.codacy.com/app/e4basil/PercentageProgressBar?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=e4basil/PercentageProgressBar&amp;utm_campaign=Badge_Grade)
     percentage progressbar lib
 
 ## 💻 Installation
