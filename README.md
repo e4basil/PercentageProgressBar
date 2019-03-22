@@ -25,4 +25,3 @@ Here is a quick overview of the attributes/features .
 |progress bar pre text     |ppb_progress_pre_text    |✓     |
 |progress bar post text     |ppb_progress_post_text    |✓    |
 
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fe4basil%2FAdkaar.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fe4basil%2FAdkaar?ref=badge_large)
