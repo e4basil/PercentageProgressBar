@@ -32,14 +32,14 @@ gen_cache_key: &gen_cache_key
 
 restore_cache: &restore_cache
   restore_cache:
-    key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
+    key: jars-{{ checksum "build.gradle.kts" }}-{{ checksum  "app/build.gradle.kts" }}
 
 save_cache: &save_cache
   save_cache:
     paths:
       - ~/.gradle/caches
       - ~/.gradle/wrapper
-    key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
+    key: jars-{{ checksum "build.gradle.kts" }}-{{ checksum  "app/build.gradle.kts" }}
 
 permissions: &permissions
   - run:
