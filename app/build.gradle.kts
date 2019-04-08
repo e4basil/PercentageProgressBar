@@ -86,3 +86,5 @@ dependencies {
 //    androidTestImplementation("com.android.support.test.espresso:espresso-core:3.0.2")
     androidTestImplementation(Libs.espresso_core)
 }
+
+apply(from="$rootProject/spotless.gradle.kts")
