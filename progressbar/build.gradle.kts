@@ -15,7 +15,6 @@ android {
         versionName = "0.1.7"
 
         testInstrumentationRunner = "android.support.test.runner.AndroidJUnitRunner"
-
     }
 
     buildTypes {
@@ -24,9 +23,7 @@ android {
             proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro")
         }
     }
-
 }
-
 
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
@@ -37,7 +34,7 @@ dependencies {
     testImplementation(Libs.junit)
     androidTestImplementation(Libs.com_android_support_test_runner)
     androidTestImplementation(Libs.espresso_core)
-
 }
 
-apply(from="./scripts/bintrayConfig.gradle")
+apply(from = "./scripts/bintrayConfig.gradle")
+apply(from = "$rootDir/spotless.gradle")

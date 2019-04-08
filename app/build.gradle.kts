@@ -28,7 +28,6 @@ android {
 //                .toTypedArray()
 //
 //            proguardFiles(*files)
-
         }
 
 //        create("debugMini") {
@@ -48,7 +47,6 @@ android {
 //
 //        }
 
-
 //        create("debugAdvance") {
 //            initWith(getByName("debug"))
 //            isMinifyEnabled = true
@@ -63,9 +61,7 @@ android {
 //            proguardFiles(*files)
 //            matchingFallbacks = listOf("debug")
 //        }
-
     }
-
 }
 
 dependencies {
@@ -87,4 +83,4 @@ dependencies {
     androidTestImplementation(Libs.espresso_core)
 }
 
-apply(from="$rootProject/spotless.gradle.kts")
+apply(from = "$rootDir/spotless.gradle")

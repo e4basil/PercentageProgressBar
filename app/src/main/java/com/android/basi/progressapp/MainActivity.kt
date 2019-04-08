@@ -17,11 +17,10 @@ class MainActivity : AppCompatActivity() {
         val runnable = object : Runnable {
             override fun run() {
 //
-                updateProgress(i)
+            updateProgress(i)
                 updateHandler.postDelayed(this, 1000)
                 i++
             }
-
         }
         updateHandler.post(runnable)
     }
@@ -30,6 +29,5 @@ class MainActivity : AppCompatActivity() {
 
             ppb.progress = i * 10
             Logger.getLogger(this::class.java.simpleName).warning("I is $i")
-
     }
 }
