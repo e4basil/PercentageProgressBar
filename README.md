@@ -6,6 +6,8 @@
 
     Percentage progressbar lib
 
+## ![img](https://raw.githubusercontent.com/e4basil/PercentageProgressBar/master/images/Untitled_2.png)
+
 ## 💻 Installation
 
     implementation 'com.android.basi:percentageprogressbar:0.1.7'
