@@ -83,7 +83,7 @@ public class PercentageProgressBar extends View {
 
         mTextThickness =
             TypedValue.applyDimension(
-                TypedValue.COMPLEX_UNIT_SP, tempSize, getResources().getDisplayMetrics());
+                TypedValue.COMPLEX_UNIT_DIP, tempSize, getResources().getDisplayMetrics());
 
         mProgressBarThickness =
             a.getDimensionPixelSize(R.styleable.PercentageProgressBar_ppb_thickness, 30);

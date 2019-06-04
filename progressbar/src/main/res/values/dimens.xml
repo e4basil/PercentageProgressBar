@@ -2,5 +2,5 @@
 <resources>
     <dimen name="default_thickness">2dp</dimen>
     <dimen name="default_inner_padding">8dp</dimen>
-    <dimen name="default_text_size">10sp</dimen>
+    <dimen name="default_text_size">12sp</dimen>
 </resources>
