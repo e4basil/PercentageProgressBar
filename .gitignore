@@ -246,14 +246,8 @@ $RECYCLE.BIN/
 # End of https://www.gitignore.io/api/macos,linux,windows,android,androidstudio
 
 
-*.iml
-.gradle
-/local.properties
-/.idea/caches/build_file_checksums.ser
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-.DS_Store
+
+/.idea/**
 /build
 /captures
-.externalNativeBuild
+/github.properties

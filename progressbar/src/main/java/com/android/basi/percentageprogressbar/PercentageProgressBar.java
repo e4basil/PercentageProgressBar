@@ -117,7 +117,7 @@ public class PercentageProgressBar extends View {
   private void setPaint() {
 
     mProgressPaint.setColor(mTextPaintColor);
-    mProgressPaint.setStyle(Paint.Style.STROKE);
+    mProgressPaint.setStyle(Paint.Style.FILL_AND_STROKE);
     mProgressPaint.setTextSize(mTextThickness);
     mProgressPaint.setStrokeCap(Paint.Cap.BUTT);
 
