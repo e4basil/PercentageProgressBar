@@ -6,7 +6,8 @@
 
     Percentage progressbar lib
 
-## ![img](https://raw.githubusercontent.com/e4basil/PercentageProgressBar/master/images/Untitled_2.png)
+## ![img](images/Untitled_2.png)
+
 
 ## 💻 Installation
 
