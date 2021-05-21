@@ -23,7 +23,7 @@ buildscript {
 }
 
 plugins {
-    id("de.fayard.buildSrcVersions") version "0.3.2"
+    id("de.fayard.buildSrcVersions") version "0.7.0"
     id("com.diffplug.gradle.spotless") version "3.21.1"
 }
 
