@@ -14,7 +14,7 @@
     implementation 'com.android.basi:percentageprogressbar:0.1.7'
 
 ## Supported attributes/features
-Here is a quick overview of the attributes/features .
+Here is a quick overview of the attributes/features
 
 |Attribute / Feature|Attribute Name |status|
 |-----------:|:-----------:|:-----------:|
