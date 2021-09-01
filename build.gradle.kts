@@ -9,7 +9,7 @@ buildscript {
     }
 
     dependencies {
-        classpath("com.android.tools.build:gradle:3.5.3")
+        classpath("com.android.tools.build:gradle:7.0.2")
         classpath(kotlin("gradle-plugin", version = "1.3.41"))
 //        classpath ("com.diffplug.spotless:spotless-plugin-gradle:3.21.1")
 
