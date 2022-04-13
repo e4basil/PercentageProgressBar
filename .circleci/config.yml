@@ -10,7 +10,7 @@ config_gcloud: &config_gcloud
 
 config_android: &config_android
   docker:
-    - image: cimg/android:2022.03
+    - image: circleci/android:api-29
   working_directory: ~/ProgressApp
   environment:
     JAVA_TOOL_OPTIONS: "-Xmx1024m"
