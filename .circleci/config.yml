@@ -1,5 +1,6 @@
-version: 2.0
+version: 2
 
+#
 config_gcloud: &config_gcloud
   docker:
     - image: google/cloud-sdk:latest
@@ -71,6 +72,14 @@ workflow_filter_all: &workflow_filter_all
     tags:
       only: /.*/
 
+
+
+
+
+
+# Jobs
+
+
 jobs:
 
   build_debug:
@@ -78,6 +87,11 @@ jobs:
     steps:
       - <<: *update_sdk
       - checkout
+      - name: Set up JDK 11
+          uses: actions/setup-java@v2
+          with:
+            distribution: adopt
+            java-version: 11
 #      - <<: *gen_cache_key
       - <<: *restore_cache
 #      - <<: *decrypt_secrets
@@ -98,84 +112,84 @@ jobs:
           destination: outputs
       - <<: *persist_workspace
 
-  check:
-    <<: *config_android
-    steps:
-      - checkout
-      - <<: *attach_workspace
-#      - <<: *gen_cache_key
-      - <<: *restore_cache
-      - run:
-          name: Check app and dependencies
-          command: ./gradlew check dependencyUpdates
-      - store_artifacts:
-          path: app/build/reports
-          destination: reports
-      - store_artifacts:
-          path: build/dependencyUpdates
-          destination: dependencyUpdates
-      - run:
-          name: Save test results
-          command: |
-            mkdir -p ~/junit/
-            find . -type f -regex ".*/build/test-results/.*xml" -exec cp {} ~/junit/ \;
-          when: always
-      - store_test_results:
-          path: ~/junit
-      - store_artifacts:
-          path: ~/junit      
-
-  build_release:
-    <<: *config_android
-    steps:
-      - checkout
-      - <<: *attach_workspace
-#      - <<: *gen_cache_key
-      - <<: *restore_cache
-#      - <<: *decrypt_secrets
-      - run:
-          name: Check and assemble APKs
-          command: ./gradlew bundleRelease assembleRelease -PProgressApp.versioncode=$CIRCLE_BUILD_NUM
-#      - <<: *clean_secrets
-      - store_artifacts:
-          path: app/build/outputs
-          destination: outputs
-      - store_artifacts:
-          path: app/build/reports
-          destination: reports
-      - <<: *persist_workspace
-
-  test_instrumented:
-    <<: *config_gcloud
-    steps:
-      - checkout
-      - <<: *attach_workspace
-#      - <<: *decrypt_secrets
+#  check:
+#    <<: *config_android
+#    steps:
+#      - checkout
+#      - <<: *attach_workspace
+##      - <<: *gen_cache_key
+#      - <<: *restore_cache
 #      - run:
-#          name: Setup Google Cloud auth
-#          command: ftl-tests/setup.sh
+#          name: Check app and dependencies
+#          command: ./gradlew check dependencyUpdates
+#      - store_artifacts:
+#          path: app/build/reports
+#          destination: reports
+#      - store_artifacts:
+#          path: build/dependencyUpdates
+#          destination: dependencyUpdates
 #      - run:
-#          name: Run tests on Firebase Test Lab
-#          command: ftl-tests/run-tests.sh $CIRCLE_BUILD_NUM firebase_test_results
+#          name: Save test results
+#          command: |
+#            mkdir -p ~/junit/
+#            find . -type f -regex ".*/build/test-results/.*xml" -exec cp {} ~/junit/ \;
 #          when: always
-#      - <<: *clean_secrets
-      - store_artifacts:
-          path: firebase_test_results
-      - store_test_results:
-          path: firebase_test_results
+#      - store_test_results:
+#          path: ~/junit
+#      - store_artifacts:
+#          path: ~/junit
 
-  deploy_to_play:
-    <<: *config_android
-    steps:
-      - checkout
-#      - <<: *gen_cache_key
-      - <<: *restore_cache
-      - <<: *attach_workspace
-#      - <<: *decrypt_secrets
-      - run:
-          name: Deploy to Alpha channel
-          command: ./gradlew publishRelease -PProgressApp.versioncode=$CIRCLE_BUILD_NUM
-#      - <<: *clean_secrets
+#  build_release:
+#    <<: *config_android
+#    steps:
+#      - checkout
+#      - <<: *attach_workspace
+##      - <<: *gen_cache_key
+#      - <<: *restore_cache
+##      - <<: *decrypt_secrets
+#      - run:
+#          name: Check and assemble APKs
+#          command: ./gradlew bundleRelease assembleRelease -PProgressApp.versioncode=$CIRCLE_BUILD_NUM
+##      - <<: *clean_secrets
+#      - store_artifacts:
+#          path: app/build/outputs
+#          destination: outputs
+#      - store_artifacts:
+#          path: app/build/reports
+#          destination: reports
+#      - <<: *persist_workspace
+#
+#  test_instrumented:
+#    <<: *config_gcloud
+#    steps:
+#      - checkout
+#      - <<: *attach_workspace
+##      - <<: *decrypt_secrets
+##      - run:
+##          name: Setup Google Cloud auth
+##          command: ftl-tests/setup.sh
+##      - run:
+##          name: Run tests on Firebase Test Lab
+##          command: ftl-tests/run-tests.sh $CIRCLE_BUILD_NUM firebase_test_results
+##          when: always
+##      - <<: *clean_secrets
+#      - store_artifacts:
+#          path: firebase_test_results
+#      - store_test_results:
+#          path: firebase_test_results
+#
+#  deploy_to_play:
+#    <<: *config_android
+#    steps:
+#      - checkout
+##      - <<: *gen_cache_key
+#      - <<: *restore_cache
+#      - <<: *attach_workspace
+##      - <<: *decrypt_secrets
+#      - run:
+#          name: Deploy to Alpha channel
+#          command: ./gradlew publishRelease -PProgressApp.versioncode=$CIRCLE_BUILD_NUM
+##      - <<: *clean_secrets
 
 workflows:
   version: 2
