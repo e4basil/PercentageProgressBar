@@ -2,17 +2,16 @@ plugins {
     id("com.android.library")
     kotlin("android")
     kotlin("android.extensions")
-//    kotlin("kapt")
 }
 
 android {
-    compileSdkVersion(28)
+    compileSdk = 28
 
     defaultConfig {
-        minSdkVersion(15)
-        targetSdkVersion(28)
-        versionCode = 7
-        versionName = "0.1.7"
+        minSdk = 15
+        targetSdk = 31
+//        versionCode = 8
+//        versionName = "0.1.8"
 
         testInstrumentationRunner = "android.support.test.runner.AndroidJUnitRunner"
     }
@@ -36,5 +35,7 @@ dependencies {
     androidTestImplementation(Libs.espresso_core)
 }
 
-apply(from = "./scripts/bintrayConfig.gradle")
+
 apply(from = "$rootDir/spotless.gradle")
+apply(from = "$rootDir/scripts/publish-module.gradle")
+

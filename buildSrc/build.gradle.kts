@@ -1,8 +1,8 @@
+repositories {
+    google()
+    mavenCentral()
+}
 
 plugins {
     `kotlin-dsl`
 }
-repositories {
-    jcenter()
-}
-        

@@ -1,6 +1,8 @@
 plugins {
     id("com.android.application")
     kotlin("android")
+//    id("kotlin-parcelize")
+    id("kotlin-kapt")
     kotlin("android.extensions")
 //    kotlin("kapt")
 }
@@ -9,13 +11,13 @@ android {
     compileSdkVersion(28)
     defaultConfig {
         applicationId = "com.android.basi.progressapp"
-        minSdkVersion(15)
-        targetSdkVersion(28)
+        minSdk = 15
+        targetSdk = 31
         versionCode = 1
         versionName = "1.0"
         testInstrumentationRunner = "android.support.test.runner.AndroidJUnitRunner"
 
-        consumerProguardFiles("proguard-file.pro")
+//        consumerProguardFiles("proguard-file.pro")
     }
 
     buildTypes {
