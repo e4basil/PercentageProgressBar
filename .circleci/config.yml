@@ -10,7 +10,7 @@ config_gcloud: &config_gcloud
 
 config_android: &config_android
   docker:
-    - image: circleci/android:api-28-alpha
+    - image: cimg/android:2022.03
   working_directory: ~/ProgressApp
   environment:
     JAVA_TOOL_OPTIONS: "-Xmx1024m"
@@ -88,11 +88,13 @@ jobs:
       - <<: *update_sdk
       - checkout
       - run:
-          name: Set up JDK 11
-          uses: actions/setup-java@v2
-          with:
-            distribution: adopt
-            java-version: 11
+          name: Install OpenJDK 11
+          command: |
+            sudo apt-get update && sudo apt-get install openjdk-11-jdk
+            sudo update-alternatives --set java /usr/lib/jvm/java-11-openjdk-amd64/bin/java
+            sudo update-alternatives --set javac /usr/lib/jvm/java-11-openjdk-amd64/bin/javac
+            java -version
+          
 #      - <<: *gen_cache_key
       - <<: *restore_cache
 #      - <<: *decrypt_secrets
