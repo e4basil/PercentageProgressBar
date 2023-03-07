@@ -15,7 +15,7 @@ buildscript {
 //        classpath ("com.diffplug.spotless:spotless-plugin-gradle:3.21.1")
 
 
-        classpath("io.github.gradle-nexus:publish-plugin:1.1.0")
+        classpath("io.github.gradle-nexus:publish-plugin:1.3.0")
     }
 }
 
@@ -32,7 +32,7 @@ buildscript {
 plugins {
     id("de.fayard.buildSrcVersions") version "0.7.0"
     id("com.diffplug.spotless") version "6.3.0"
-    id("io.github.gradle-nexus.publish-plugin") version "1.1.0"
+    id("io.github.gradle-nexus.publish-plugin") version "1.3.0"
 }
 
 apply {
